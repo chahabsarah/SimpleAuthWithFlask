@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background-color: #f0f4ff;
+    font-family: Arial, sans-serif;
+  }
+  .register-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 100, 0.2);
+  }
+  .register-container h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 25px;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #003366;
+  }
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #0055cc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  .btn-register {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .btn-register:hover {
+    background-color: #0055cc;
+  }
+</style>
+
+<div class="register-container">
+  <h2>Create Account</h2>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+
+    <label for="username">{{ form.username.label.text }}</label>
+    {{ form.username(id="username") }}
+
+    <label for="password">{{ form.password.label.text }}</label>
+    {{ form.password(id="password") }}
+
+    <label for="confirm_password">{{ form.confirm_password.label.text }}</label>
+    {{ form.confirm_password(id="confirm_password") }}
+
+    <label for="role">{{ form.role.label.text }}</label>
+    {{ form.role(id="role") }}
+
+    {{ form.submit(class="btn-register") }}
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <style>
+    body {
+      background: #f0f4ff;
+      font-family: Arial, sans-serif;
+      color: #003366;
+    }
+    form {
+      max-width: 360px;
+      margin: 50px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,100,0.2);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 2px solid #0055cc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      background: #003366;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0055cc;
+    }
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form id="login-form">
+    <div class="error" id="error-msg"></div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" required />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required />
+
+    <button type="submit">Login</button>
+     <a href="/register">Register</a>
+
+  </form>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+
+      const errorMsg = document.getElementById('error-msg');
+      errorMsg.textContent = '';
+
+      try {
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          localStorage.setItem('access_token', data.access_token);
+          alert('Login successful! Token stored.');
+
+          const token = localStorage.getItem('access_token');
+          const response = await fetch('/dashboard', {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+          const html = await response.text();
+          document.open();
+          document.write(html);
+          document.close();
+        } else {
+          errorMsg.textContent = data.msg || 'Login failed';
+        }
+      } catch (err) {
+        errorMsg.textContent = 'An error occurred. Try again.';
+      }
+    });
+  </script>
+</body>
+</html>
