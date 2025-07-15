@@ -1,19 +1,17 @@
 
----
-
 ## 📘 SimpleAuthWithFlask
 
-Une application d'authentification sécurisée en **Flask**, avec :
+A secure **Flask** authentication application, including:
 
-* Formulaire d’inscription et de connexion (Flask-WTF)
-* Authentification avec JWT
-* Dashboard protégé
-* Stockage du token dans `localStorage`
-* Rôles utilisateurs : `admin`, `client`.
+* Registration and login forms using Flask-WTF
+* JWT-based authentication
+* Protected dashboard
+* Token storage in `localStorage`
+* User roles: `admin`, `client`
 
 ---
 
-### 🛠️ Technologies utilisées
+### 🛠️ Technologies Used
 
 * Python 3.12
 * Flask
@@ -22,57 +20,56 @@ Une application d'authentification sécurisée en **Flask**, avec :
 * Flask-Login
 * HTML5 / CSS3
 * SQLite
-* JavaScript (pour `localStorage`)
+* JavaScript (for `localStorage`)
 
 ---
 
-### 🚀 Lancement du projet
+### 🚀 Getting Started
 
-1. **Cloner le projet**
+1. **Clone the project**
 
 ```bash
 git clone https://github.com/chahabsarah/SimpleAuthWithFlask.git
 cd SimpleAuthWithFlask
 ```
 
-2. **Créer un environnement virtuel**
+2. **Create a virtual environment**
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # sous Unix/macOS
-venv\Scripts\activate     # sous Windows
+source venv/bin/activate      # on Unix/macOS
+venv\Scripts\activate         # on Windows
 ```
 
-3. **Installer les dépendances**
+3. **Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Lancer l’application**
+4. **Run the application**
 
 ```bash
 flask run
 ```
 
+---
+
+### 🔐 Features
+
+| Endpoint          | Description                      |
+| ----------------- | -------------------------------- |
+| `/register`       | Registration page with form      |
+| `/login`          | Login page with form             |
+| `/api/login`      | JWT authentication via JSON POST |
+| `/dashboard`      | JWT-protected dashboard          |
+| `/api/protected`  | JWT-protected API route          |
+| `/api/admin-only` | Accessible only by `admin` role  |
+| `localStorage`    | Stores JWT token client-side     |
 
 ---
 
-### 🔐 Fonctionnalités
-
-| Fonctionnalité    | Description                           |
-| ----------------- | ------------------------------------- |
-| `/register`       | Page d'inscription via formulaire     |
-| `/login`          | Page de connexion via formulaire      |
-| `/api/login`      | Authentification avec JWT (POST JSON) |
-| `/dashboard`      | Dashboard protégé par JWT             |
-| `/api/protected`  | Route API protégée par JWT            |
-| `/api/admin-only` | Accès réservé au rôle `admin`         |
-| `localStorage`    | Stockage du token côté client         |
-
----
-
-### 📂 Structure du projet
+### 📂 Project Structure
 
 ```
 flask-auth-app/
@@ -88,16 +85,14 @@ flask-auth-app/
 │       ├── register.html
 │       └── dashboard.html
 │
-│
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-### 👩‍💻 Développé par
+### 👩‍💻 Developed By
 
 **Sarra Chahab**
 
----
 
