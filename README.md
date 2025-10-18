@@ -91,12 +91,11 @@ flask-auth-app/
 
 ---
 ### 🖼️ Screenshots
-```
-![Home Page](images/home.jpg)
-![Login Page](images/login.jpg)
+
+![Home Page](images/home.jpg)  
+![Login Page](images/login.jpg)  
 ![Sign Up Page](images/signup.jpg)
 
-```
 ---
 ### 👩‍💻 Developed By
 
