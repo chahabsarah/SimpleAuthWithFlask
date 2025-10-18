@@ -92,9 +92,10 @@ flask-auth-app/
 ---
 ### 🖼️ Screenshots
 ```
-![Home page](../SimpleAuthWithFlask/app/static/home.jpg)
-![Login page](../SimpleAuthWithFlask/app/static/login.jpg)
-![Sign up page](../SimpleAuthWithFlask/app/static/signup.jpg)
+![Home Page](images/home.jpg)
+![Login Page](images/login.jpg)
+![Sign Up Page](images/signup.jpg)
+
 ```
 ---
 ### 👩‍💻 Developed By
