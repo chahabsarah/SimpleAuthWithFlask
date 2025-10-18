@@ -9,6 +9,11 @@ from functools import wraps
 
 main = Blueprint('main', __name__)
 
+
+@main.route('/')
+def home():
+    return redirect(url_for('main.login'))
+
 @main.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()

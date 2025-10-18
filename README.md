@@ -90,7 +90,13 @@ flask-auth-app/
 ```
 
 ---
-
+### 🖼️ Screenshots
+```
+![Home page](../SimpleAuthWithFlask/app/static/home.jpg)
+![Login page](../SimpleAuthWithFlask/app/static/login.jpg)
+![Sign up page](../SimpleAuthWithFlask/app/static/signup.jpg)
+```
+---
 ### 👩‍💻 Developed By
 
 **Sarra Chahab**
